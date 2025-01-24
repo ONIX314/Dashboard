@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0D1B2A;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+        }
+
+        .register-container {
+            background-color: #16243C;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .register-container h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .register-container p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: #AAB6C1;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            text-align: left;
+            position: relative;
+        }
+
+        .form-group input {
+            width: calc(100% - 2.5rem);
+            padding: 0.7rem 0.7rem 0.7rem 2.2rem;
+            border-radius: 6px;
+            border: none;
+            font-size: 0.9rem;
+            background-color: #0D1B2A;
+            color: white;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border: 2px solid #2979FF;
+        }
+
+        .form-group input::placeholder {
+            color: #AAB6C1;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #2979FF;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            text-transform: lowercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #1B5FCC;
+            transform: scale(1.02);
+        }
+
+        .login {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #AAB6C1;
+        }
+
+        .login a {
+            color: #2979FF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login a:hover {
+            text-decoration: underline;
+        }
+
+        .icon-user::before {
+            content: '\1F464';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .icon-lock::before {
+            content: '\1F512';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .icon-license::before {
+            content: '\1F4B3';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Create an account</h2>
+        <p>Fill in the details to register</p>
+        <form action="register_process.php" method="POST">
+            <div class="form-group">
+                <span class="icon icon-user"></span>
+                <input type="text" id="username" name="username" placeholder="Username" maxlength="20" required>
+            </div>
+            <div class="form-group">
+                <span class="icon icon-lock"></span>
+                <input type="password" id="password" name="password" placeholder="Password" maxlength="20" required>
+            </div>
+            <div class="form-group">
+                <span class="icon icon-license"></span>
+                <input type="text" id="license" name="license" placeholder="License Key" maxlength="30">
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div class="login">
+            Already have an account? <a href="login.html">Sign in</a>
+        </div>
+    </div>
+</body>
+</html>
